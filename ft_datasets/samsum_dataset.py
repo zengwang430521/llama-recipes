@@ -7,7 +7,8 @@ import datasets
 from .utils import Concatenator
 
 def get_preprocessed_samsum(dataset_config, tokenizer, split):
-    dataset = datasets.load_dataset("samsum", split=split)
+    # dataset = datasets.load_dataset("samsum", split=split)
+    dataset = datasets.load_dataset('./data/samsum/{}'.format(split))
 
     prompt = (
         f"Summarize this dialog:\n{{dialog}}\n---\nSummary:\n{{summary}}{{eos_token}}"
