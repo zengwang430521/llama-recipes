@@ -6,6 +6,7 @@ srun -p pat_taurus \
    python llama_finetuning.py  --use_peft --peft_method lora \
    --model_name /mnt/cache/zengwang/data/llama/llama-2-7b-hf \
    --output_dir /mnt/cache/zengwang/data/llama/llama-2-7b-hf-finetune
+#   --dataset alpaca_dataset
 
 
    torchrun --nnodes 1 --nproc_per_node 8  llama_finetuning.py --enable_fsdp \
